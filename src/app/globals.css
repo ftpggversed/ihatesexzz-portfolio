@@ -288,3 +288,59 @@ html, body {
 .dark .toyhouse a:hover {
   color: #fff;
 }
+/* -- Service Tabs & Placeholders -- */
+
+.service-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 0.75rem 2rem;       /* larger tap area */
+  font-size: 1.25rem;          /* bigger text */
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;  /* thicker underline */
+  transition: color 0.2s, border-color 0.2s;
+  color: inherit;
+}
+
+.tab-button:hover {
+  color: #000;
+}
+
+.dark .tab-button:hover {
+  color: #fff;
+}
+
+.tab-button.active {
+  border-color: #333;         /* highlight underline */
+}
+
+.dark .tab-button.active {
+  border-color: #eee;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 across */
+  gap: 1rem;
+  justify-items: center;
+  margin-bottom: 4rem;
+}
+
+.service-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* keeps it square */
+  background: #e0e0e0;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.dark .service-placeholder {
+  background: #2a2a2a;
+}
