@@ -187,6 +187,7 @@ body {
 }
 .tagline-text {
   font-size: 1.25rem;
+  margin-bottom: 1.5rem; /* added space under tagline */
 }
 .cta-button {
   padding: 0.75rem 1.5rem;
@@ -196,6 +197,9 @@ body {
   font-weight: 600;
   text-decoration: none;
   transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+.hero .cta-button {
+  margin-top: 0.75rem; /* added top-margin for breathing room */
 }
 .cta-button:hover {
   background: #333;
