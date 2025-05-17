@@ -33,7 +33,7 @@ export default function PortfolioPage() {
       {/* Header */}
       <header className="header">
         <div className="container">
-          <Link href="#home" className="logo">IHateSexzz</Link>
+          <Link href="#home" className="logo">IHateSex</Link>
           <nav className="nav">
             <Link href="#portfolio" className="nav-link">Portfolio</Link>
             <Link href="#services" className="nav-link">Services</Link>
@@ -55,7 +55,7 @@ export default function PortfolioPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          IHateSexzz
+          IHateSex
         </motion.h1>
         <div className="tagline">
           <AnimatePresence mode="wait">
