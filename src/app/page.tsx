@@ -5,10 +5,10 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { FaDiscord, FaTiktok } from 'react-icons/fa';
 
-// Define your service tabs as a tuple for proper typing
+// Service tabs
 const services = ['Commissions', 'Design', 'Concepts'] as const;
 type Service = typeof services[number];
 
@@ -25,8 +25,12 @@ export default function PortfolioPage() {
   const { theme, setTheme } = useTheme();
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
-  // Track which tab is active (for styling)
-  const [activeTab, setActiveTab] = useState<Service | null>(null);
+  // Mobile menu
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const toggleMobile = () => setMobileOpen(o => !o);
+
+  // Active service tab (for styling)
+  const [activeTab, setActiveTab] = useState<Service>('Commissions');
 
   return (
     <div className="page">
@@ -34,17 +38,41 @@ export default function PortfolioPage() {
       <header className="header">
         <div className="container">
           <Link href="#home" className="logo">IHateSex</Link>
+
+          {/* desktop nav */}
           <nav className="nav">
             <Link href="#portfolio" className="nav-link">Portfolio</Link>
             <Link href="#services" className="nav-link">Services</Link>
             <Link href="#contact" className="nav-link">Contact</Link>
           </nav>
+
+          {/* actions */}
           <div className="actions">
-            <button onClick={toggleTheme} className="theme-switcher" aria-label="Toggle theme">
+            <button
+              onClick={toggleTheme}
+              className="theme-switcher"
+              aria-label="Toggle theme"
+            >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+
+            {/* mobile menu button */}
+            <button
+              onClick={toggleMobile}
+              className="mobile-menu-button"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
+
+        {/* mobile nav overlay */}
+        <nav className={`mobile-nav ${mobileOpen ? 'open' : ''}`}>
+          <Link href="#portfolio" className="nav-link" onClick={() => setMobileOpen(false)}>Portfolio</Link>
+          <Link href="#services" className="nav-link" onClick={() => setMobileOpen(false)}>Services</Link>
+          <Link href="#contact" className="nav-link" onClick={() => setMobileOpen(false)}>Contact</Link>
+        </nav>
       </header>
 
       {/* Hero Section */}
@@ -57,6 +85,7 @@ export default function PortfolioPage() {
         >
           IHateSex
         </motion.h1>
+
         <div className="tagline">
           <AnimatePresence mode="wait">
             <motion.p
@@ -71,6 +100,7 @@ export default function PortfolioPage() {
             </motion.p>
           </AnimatePresence>
         </div>
+
         <Link href="#portfolio" className="cta-button">View Portfolio</Link>
       </section>
 
@@ -92,7 +122,7 @@ export default function PortfolioPage() {
 
         {/* Tab Buttons */}
         <div className="service-tabs">
-          {services.map((s) => (
+          {services.map(s => (
             <button
               key={s}
               onClick={() => setActiveTab(s)}
