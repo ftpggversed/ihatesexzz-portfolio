@@ -23,14 +23,12 @@ const NotFoundPage: React.FC = () => {
         <div className="container">
           <Link href="/" className="logo">IHateSex</Link>
 
-          {/* Desktop Nav */}
           <nav className="nav">
             <Link href="/" className="nav-link">Home</Link>
             <Link href="#services" className="nav-link">Services</Link>
             <Link href="#contact" className="nav-link">Contact</Link>
           </nav>
 
-          {/* Actions */}
           <div className="actions">
             <button onClick={toggleTheme} className="theme-switcher" aria-label="Toggle theme">
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
@@ -41,7 +39,6 @@ const NotFoundPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Nav Overlay */}
         <nav className={`mobile-nav ${mobileOpen ? 'open' : ''}`}>
           <Link href="/" className="nav-link" onClick={() => setMobileOpen(false)}>Home</Link>
           <Link href="#services" className="nav-link" onClick={() => setMobileOpen(false)}>Services</Link>
@@ -93,6 +90,7 @@ const NotFoundPage: React.FC = () => {
             <FaTiktok size={24} /> TikTok
           </Link>
         </div>
+        <p className="footer-note">© 2025 IHateSex. All paws on deck!</p>
       </section>
     </div>
   );

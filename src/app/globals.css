@@ -187,7 +187,7 @@ body {
 }
 .tagline-text {
   font-size: 1.25rem;
-  margin-bottom: 1.5rem; /* added space under tagline */
+  margin-bottom: 1.5rem; /* space under tagline */
 }
 .cta-button {
   padding: 0.75rem 1.5rem;
@@ -199,7 +199,7 @@ body {
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 .hero .cta-button {
-  margin-top: 0.75rem; /* added top-margin for breathing room */
+  margin-top: 0.75rem; /* breathing room */
 }
 .cta-button:hover {
   background: #333;
@@ -348,6 +348,46 @@ body {
 }
 .dark .toyhouse a:hover {
   color: #fff;
+}
+
+/* Improved Footer Styling */
+.contact {
+  padding: 3rem 1rem;
+  background: #f5f5f5;
+  border-top: 2px solid #e0e0e0;
+}
+.dark .contact {
+  background: #1a1a1a;
+  border-top-color: #333;
+}
+.contact .section-title {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+.contact-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+.socials {
+  display: inline-flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.social-link {
+  font-size: 1.05rem;
+}
+.social-link:hover {
+  color: #ff9a9e;
+}
+.dark .social-link:hover {
+  color: #fad0c4;
+}
+.footer-note {
+  font-size: 0.8rem;
+  color: #777;
+}
+.dark .footer-note {
+  color: #999;
 }
 
 /* Mobile & Responsive Overrides */
