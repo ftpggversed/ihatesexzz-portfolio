@@ -1,6 +1,6 @@
 /* styles/globals.css */
 
-/* Reset & base */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -52,7 +52,7 @@ body {
   color: inherit;
 }
 
-/* Desktop Nav */
+/* Navigation */
 .nav {
   display: none;
 }
@@ -86,7 +86,7 @@ body {
   }
 }
 
-/* Theme-Switcher Button */
+/* Theme Switcher */
 .actions {
   display: flex;
   align-items: center;
@@ -98,7 +98,7 @@ body {
   padding: 0.4rem;
   cursor: pointer;
   color: inherit;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 .theme-switcher:hover {
   background: currentColor;
@@ -109,12 +109,12 @@ body {
   color: #000;
 }
 
-/* Mobile Menu Button */
+/* Mobile Menu */
 .mobile-menu-button {
   background: none;
   border: none;
-  margin-left: 1rem;
   cursor: pointer;
+  margin-left: 1rem;
   color: inherit;
   transition: color 0.3s;
 }
@@ -126,8 +126,6 @@ body {
     display: none;
   }
 }
-
-/* Mobile Nav Overlay */
 .mobile-nav {
   display: none;
   flex-direction: column;
@@ -147,7 +145,7 @@ body {
   display: flex;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
   height: 100vh;
   padding: 0 1rem;
@@ -174,13 +172,12 @@ body {
 }
 .tagline-text {
   font-size: 1.25rem;
-  margin-bottom: 1.5rem;
 }
 .cta-button {
   padding: 0.75rem 1.5rem;
   border: 2px solid currentColor;
-  color: inherit;
   border-radius: 4px;
+  color: inherit;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
@@ -190,7 +187,7 @@ body {
   color: #fff;
 }
 
-/* Portfolio Cards (middle carousel) */
+/* Portfolio Carousel */
 .projects {
   padding: 4rem 1rem;
   display: grid;
@@ -216,10 +213,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Lightbox Overlay */
+/* Lightbox */
 .lightbox {
   position: fixed;
   top: 0;
@@ -236,11 +232,11 @@ body {
 .lightbox-image {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 8px;
   object-fit: contain;
+  border-radius: 8px;
 }
 
-/* Services Section */
+/* Services Tabs */
 .services {
   padding: 4rem 1rem;
   text-align: center;
@@ -249,41 +245,40 @@ body {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+
+/* Updated tab styling: underline on active */
 .service-tabs {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 2.5rem;
 }
 .tab-button {
   background: none;
-  border: 2px solid currentColor;
+  border: none;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   color: inherit;
-  border-radius: 4px;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
-}
-.tab-button.active {
-  background: currentColor;
-  color: #fff;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
 }
 .tab-button:hover {
-  background: currentColor;
-  color: #fff;
+  border-color: currentColor;
+}
+.tab-button.active {
+  border-color: currentColor;
 }
 
-/* Services-grid: fixed 3×2 squares */
+/* Services Grid: 3×2 squares */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 .services-grid .card {
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 8px;
   transition: transform 0.3s;
@@ -295,10 +290,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Contact Section */
+/* Contact */
 .contact {
   padding: 3rem 1rem;
   text-align: center;
@@ -354,7 +348,7 @@ body {
   color: #999;
 }
 
-/* Mobile & Responsive Overrides */
+/* Responsive Overrides */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
@@ -369,10 +363,6 @@ body {
   .projects,
   .services-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-  .tab-button {
-    flex: 1;
-    text-align: center;
   }
 }
 @media (max-width: 480px) {
